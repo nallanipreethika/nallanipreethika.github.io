@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preethika Nallani - Software Engineer | Platform Infrastructure Automation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        nav button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav button.active {
+            background: #764ba2;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .experience-item, .project-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-item h3, .project-item h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 3px solid #667eea;
+        }
+
+        .skill-category h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .certification {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .award-item {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Preethika Nallani</h1>
+            <p style="font-size: 1.2em; color: #764ba2; margin-top: 10px;">Software Engineer | Platform Infrastructure Automation</p>
+            <div class="contact-info">
+                <a href="mailto:preethinallani@gmail.com">📧 preethinallani@gmail.com</a>
+                <a href="tel:+917674936612">📱 +91-7674936612</a>
+                <span>📍 Hyderabad, India</span>
+            </div>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" onclick="showSection('about')">About</button>
+            <button class="nav-btn" onclick="showSection('experience')">Experience</button>
+            <button class="nav-btn" onclick="showSection('skills')">Skills</button>
+            <button class="nav-btn" onclick="showSection('projects')">Projects</button>
+            <button class="nav-btn" onclick="showSection('education')">Education</button>
+            <button class="nav-btn" onclick="showSection('awards')">Awards</button>
+        </nav>
+
+        <div id="about" class="section active">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1em; line-height: 1.8;">
+                Results-driven Software Engineer specializing in Platform Infrastructure Automation with expertise in database management, observability, and cloud infrastructure. Currently working at ServiceNow in the Platform Infra Automation - Farm Management team, managing critical operations including move, clone, restore, db drain, reseed, and copy operations. Building comprehensive Grafana dashboards for observability and system monitoring. Strong background in ETL validation, network monitoring, and test automation with a proven track record of delivering robust, automated solutions.
+            </p>
+            <p style="font-size: 1.1em; line-height: 1.8; margin-top: 15px;">
+                Certified in TOSCA Automation, Google Cloud (ACE & PCA), and Salesforce Platform Development. Strong expertise in building observability solutions, infrastructure automation, and database management. Passionate about leveraging technology to solve complex problems and committed to continuous learning and innovation in cloud infrastructure and platform engineering.
+            </p>
+        </div>
+
+        <div id="experience" class="section">
+            <h2>Work Experience</h2>
+            
+            <div class="experience-item">
+                <h3>ServiceNow - Software Engineer</h3>
+                <p class="date">January 2025 - Present</p>
+                <p><strong>Platform Infrastructure Automation - Farm Management Team</strong></p>
+                <ul>
+                    <li>Design and implement automation solutions for critical database operations including move, clone, restore, db drain, reseed, and copy</li>
+                    <li>Build and maintain comprehensive Grafana dashboards for observability and system monitoring</li>
+                    <li>Develop infrastructure automation scripts to streamline farm management operations</li>
+                    <li>Monitor and optimize platform performance using observability tools and metrics</li>
+                    <li>Collaborate with cross-functional teams to ensure high availability and reliability of platform infrastructure</li>
+                    <li>Implement best practices for database management and infrastructure automation</li>
+                    <li>Troubleshoot and resolve complex infrastructure issues in production environments</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Oracle India Pvt Ltd - Network Management Specialist</h3>
+                <p class="date">January 2025 - January 2025</p>
+                <p><strong>Unified Assurance</strong></p>
+                <ul>
+                    <li>Expert in Microsoft Active Directory and LDAP server configurations</li>
+                    <li>Specialized in Service Impact Analysis and Network Impact Analysis</li>
+                    <li>Configure Correlation Rules, Filters, Views, and Displays in Unified Assurance</li>
+                    <li>Performance reporting with customizable drag-drop tools, maps, and dashboards</li>
+                    <li>Monitor SNMP, HMC, Cisco UCS and classify service-affecting alarms from vendor devices (ECI, Tejas, Huawei, Nokia, Cisco, Verizon)</li>
+                    <li>Implement Event notifications through Email/SMS using Unified Assurance</li>
+                    <li>Integrate Transmission Network and Cisco IP/MPLS devices with Fault Management system</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Tata Consultancy Services - Software Test Engineer</h3>
+                <p class="date">January 2024 - December 2024</p>
+                <p><strong>Bank of America | Federal Deposit Insurance Corporation</strong></p>
+                <ul>
+                    <li>Developed PyCharm script for ETL validation, reducing processing time significantly</li>
+                    <li>Created comprehensive technical documentation including validation test plans and traceability matrices</li>
+                    <li>Executed database and regression testing using Teradata, SQL, Mainframe, Unix, and TOSCA</li>
+                    <li>Automated SQL query execution for regression testing using TOSCA</li>
+                    <li>Conducted impact analysis reducing test cases from 30 to 6 and testing time from one week to three days</li>
+                    <li>Executed 72 test cases in QTest for dry-run and QA testing of SOR files</li>
+                    <li>Developed automation process for support ticket creation, streamlining database approval requests</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Element Fleet Management</h3>
+                <ul>
+                    <li>Executed Sanity, End-to-End, Functional, System, and Regression Testing</li>
+                    <li>Developed and executed detailed Test Scenarios and Test Cases</li>
+                    <li>Adapted and updated Automation Scripts in response to evolving requirements</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>FDIC Sourcing</h3>
+                <p class="date">June 2022 - December 2022</p>
+                <ul>
+                    <li>Loaded and unloaded data into different environments using Teradata Load Utilities in Mainframes</li>
+                    <li>Worked with complex SQL queries, Hadoop and Hive queries for ETL Process testing</li>
+                    <li>Executed scripts in TOSCA tool and performed Integration & Regression Testing</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>OMERS Pension Management</h3>
+                <ul>
+                    <li>Developed and executed Manual Test Cases including Test Planning and Execution</li>
+                    <li>Created Automation Test Scripts using Ready API for API Testing</li>
+                    <li>Reduced test time by 80% through automation and enhanced test coverage</li>
+                    <li>Utilized CI/CD tools for test case execution and analysis</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>CDH to CDP Migration</h3>
+                <p class="date">January 2022 - May 2022</p>
+                <ul>
+                    <li>Migrated data from CDH to CDP cluster</li>
+                    <li>Validated Test scripts to ensure data count consistency between CDH and CDP</li>
+                    <li>Prepared Test plans and scenarios based on Design Documentation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>OMNI Transformation</h3>
+                <p class="date">June 2021 - January 2022</p>
+                <ul>
+                    <li>Migrated data from Teradata to Hadoop</li>
+                    <li>Performed validation, standardization and data cleansing implementing business rules</li>
+                    <li>Enhanced performance of ETL and Oracle codes</li>
+                    <li>Prepared code review sheets and detailed design documents ensuring defect-free delivery</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="skills" class="section">
+            <h2>Skills & Certifications</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Platform & Infrastructure</h3>
+                    <span class="skill-tag">Grafana</span>
+                    <span class="skill-tag">Observability</span>
+                    <span class="skill-tag">Database Operations</span>
+                    <span class="skill-tag">Farm Management</span>
+                    <span class="skill-tag">Infrastructure Automation</span>
+                    <span class="skill-tag">Linux/Unix</span>
+                    <span class="skill-tag">Solaris</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Monitoring & Observability</h3>
+                    <span class="skill-tag">Grafana</span>
+                    <span class="skill-tag">Performance Monitoring</span>
+                    <span class="skill-tag">SNMP</span>
+                    <span class="skill-tag">System Metrics</span>
+                    <span class="skill-tag">Alerting</span>
+                    <span class="skill-tag">Dashboards</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Testing & Quality Assurance</h3>
+                    <span class="skill-tag">TOSCA</span>
+                    <span class="skill-tag">Selenium</span>
+                    <span class="skill-tag">TestNG</span>
+                    <span class="skill-tag">Rest Assured</span>
+                    <span class="skill-tag">ReadyAPI</span>
+                    <span class="skill-tag">Postman</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Databases & ETL</h3>
+                    <span class="skill-tag">Teradata</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Oracle</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MSSQL</span>
+                    <span class="skill-tag">Informatica Power Center</span>
+                    <span class="skill-tag">Hadoop</span>
+                    <span class="skill-tag">Hive</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Automation & Scripting</h3>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">PERL</span>
+                    <span class="skill-tag">Shell Scripting</span>
+                    <span class="skill-tag">CGI</span>
+                    <span class="skill-tag">Unix/Linux</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Network Management</h3>
+                    <span class="skill-tag">SNMP</span>
+                    <span class="skill-tag">LDAP</span>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">ICMP</span>
+                    <span class="skill-tag">TL1</span>
+                    <span class="skill-tag">CORBA</span>
+                    <span class="skill-tag">Unified Assurance</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <span class="skill-tag">Google Cloud Platform</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">GitLab</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Visual Studio</span>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <span class="skill-tag">Agile</span>
+                    <span class="skill-tag">JIRA</span>
+                    <span class="skill-tag">QTest</span>
+                    <span class="skill-tag">ALM</span>
+                    <span class="skill-tag">Rally</span>
+                    <span class="skill-tag">SharePoint</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: #667eea;">Professional Certifications</h3>
+            <div class="certification">
+                <strong>TOSCA Automation Specialist 1 & 2</strong>
+            </div>
+            <div class="certification">
+                <strong>Google Cloud Associate Cloud Engineer (GCP-ACE)</strong>
+            </div>
+            <div class="certification">
+                <strong>Google Cloud Professional Cloud Architect (GCP-PCA)</strong>
+            </div>
+            <div class="certification">
+                <strong>Salesforce Platform Developer-1 (PD-1)</strong>
+            </div>
+        </div>
+
+        <div id="projects" class="section">
+            <h2>Projects & Competitions</h2>
+            
+            <div class="project-item">
+                <h3>Platform Infrastructure Automation - Farm Management</h3>
+                <p class="date">2025 | ServiceNow</p>
+                <p>Developing comprehensive automation solutions for critical database operations including move, clone, restore, db drain, reseed, and copy operations. Building Grafana dashboards for real-time observability and monitoring of platform infrastructure, enabling proactive issue detection and resolution.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Raspberry Pi based Crowd Detection System</h3>
+                <p class="date">January 2021 | Major Project</p>
+                <p>Developed a computational crowd detection system for public places using Raspberry Pi technology. The system enables real-time monitoring and analysis of crowd density to enhance public safety and management.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Wheelchair-based Auto-Navigation System</h3>
+                <p class="date">November 2020 | 1 Million Seconds Hackathon</p>
+                <p>Created an innovative auto-navigation system for wheelchairs designed for both physical and cognitive impairments. Project achieved Top 100 recognition in the hackathon, demonstrating practical application of assistive technology.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Observability Dashboard Development</h3>
+                <p class="date">2025 | ServiceNow</p>
+                <p>Designed and implemented comprehensive Grafana dashboards for monitoring platform health, database operations, and system performance metrics. Integrated multiple data sources to provide unified observability across infrastructure components.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>ETL Validation Automation</h3>
+                <p class="date">2024 | Bank of America - FDIC</p>
+                <p>Developed a PyCharm script for ETL validation that significantly reduced processing time and enabled simultaneous multiple validations. Streamlined the validation process for insured and uninsured account information across multiple Deposit SORs.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Support Ticket Automation</h3>
+                <p class="date">2024 | Tata Consultancy Services</p>
+                <p>Created an automation process for support ticket creation, streamlining database approval requests and significantly reducing manual effort and processing time. Enhanced operational efficiency for the team.</p>
+            </div>
+        </div>
+
+        <div id="education" class="section">
+            <h2>Education</h2>
+            
+            <div class="experience-item">
+                <h3>Bachelor of Technology - Electronics & Communication Engineering</h3>
+                <p class="date">July 2017 - July 2021</p>
+                <p><strong>Jayamukhi Institute of Technological Sciences, Warangal</strong></p>
+                <p style="margin-top: 10px; color: #764ba2; font-weight: bold;">🏆 Gold Medal - Department Topper</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Intermediate - MPC (Maths, Physics, Chemistry)</h3>
+                <p class="date">June 2015 - March 2017</p>
+                <p><strong>Abhyass Junior College, Hyderabad</strong></p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Secondary School Certificate (SSC)</h3>
+                <p class="date">March 2015</p>
+                <p><strong>Learners Land High School, Warangal</strong></p>
+            </div>
+        </div>
+
+        <div id="awards" class="section">
+            <h2>Awards & Leadership</h2>
+            
+            <div class="award-item">
+                <h3>🏆 Gold Medal - Jayamukhi Institute</h3>
+                <p class="date">February 2023</p>
+                <p>Awarded for securing highest CGPA and being the Topper of Electronics & Communication Engineering department.</p>
+            </div>
+
+            <div class="award-item">
+                <h3>⭐ Best Team Award - TCS</h3>
+                <p class="date">August 2022</p>
+                <p>Recognized for completing all assigned tasks on time and demonstrating exceptional team collaboration.</p>
+            </div>
+
+            <div class="award-item">
+                <h3>🌟 Star of The Month Award - TCS</h3>
+                <p class="date">February 2022</p>
+                <p>Awarded for demonstrating innovative thinking on data management and exceptional teamwork to accomplish Go-Live targets.</p>
+            </div>
+
+            <div class="award-item">
+                <h3>💫 Born To Be Extraordinary - Be the Change</h3>
+                <p class="date">March 2021</p>
+                <p>Recognized for outstanding performance in extracurricular activities and leadership initiatives.</p>
+            </div>
+
+            <h3 style="margin-top: 40px; color: #667eea;">Leadership & Volunteer Experience</h3>
+            
+            <div class="experience-item">
+                <h3>IEEE Product Engineering Development Newsletter - Editor</h3>
+                <p>Edited monthly newsletter sharing latest updates in digital transformation domain across various industries.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>IEEE VoLT Volunteer Leadership Training Program</h3>
+                <p>Completed Volunteer Leadership training from Member Geographic Activities in IEEE, enhancing leadership skills and community engagement.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Induce - Together to Explore - Mentor</h3>
+                <p>Serving as mentor at Induce, an MSME Registered organization focused on skill development and innovation.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>IEEE Volunteer (7 Years)</h3>
+                <p>Published three research papers, organized technical events at Section level and India Council, demonstrating long-term commitment to technical community development.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Preethika Nallani. All rights reserved.</p>
+            <p style="margin-top: 10px;">Building innovative solutions | Committed to excellence</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const buttons = document.querySelectorAll('.nav-btn');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
