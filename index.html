@@ -473,6 +473,52 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            display: none;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-nav li {
+            margin: 1rem 0;
+        }
+
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            padding: 0.5rem;
         }
 
         @media (max-width: 768px) {
@@ -499,6 +545,19 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav .container {
+                padding: 0 1rem;
+            }
+
+            .contact-card p,
+            .contact-card a {
+                word-break: break-word;
+            }
         }
     </style>
 </head>
@@ -510,7 +569,7 @@
     <nav>
         <div class="container">
             <div class="logo">PN</div>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -521,6 +580,18 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul>
+            <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+            <li><a href="#skills" onclick="toggleMobileMenu()">Skills</a></li>
+            <li><a href="#experience" onclick="toggleMobileMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMobileMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMobileMenu()">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -764,11 +835,16 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Preethika Nallani. All rights reserved.</p>
-        <p style="margin-top: 1rem;">Software Engineer | Platform Infrastructure Automation</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">Building innovative solutions | Committed to excellence</p>
+        <p style="margin-top: 1rem;">Building innovative solutions | Committed to excellence</p>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
